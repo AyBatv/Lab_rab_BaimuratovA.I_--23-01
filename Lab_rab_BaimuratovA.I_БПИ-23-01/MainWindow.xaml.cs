@@ -23,6 +23,14 @@ namespace Lab_rab_BaimuratovA.I_БПИ_23_01
         public MainWindow()
         {
             InitializeComponent();
+
         }
+    }
+    public class Book
+    {
+        public string Title { get; set; }
+        public int Page { get; set; }
+        public int Price { get; set; }
+
     }
 }
