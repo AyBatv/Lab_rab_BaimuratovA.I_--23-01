@@ -10,16 +10,16 @@ namespace Lab_rab_BaimuratovA.I_БПИ_23_01
     {
         public string Title { get; set; }
         public int Pages { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
 
-        public Book(string title, int pages, int price)
+        public Book(string title, int pages, double price)
         {
             Title = title;
             Pages = pages;
             Price = price;
         }
 
-        public double AverageCostOfPafe()
+        public double AverageCostOfPage()
         {
             if (Pages <= 0) return 0;
             return Price / Pages;

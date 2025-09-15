@@ -6,29 +6,54 @@
         xmlns:local="clr-namespace:Lab_rab_BaimuratovA.I_БПИ_23_01"
         mc:Ignorable="d"
         Title="Книга" Height="450" Width="800">
-    <Grid>
+
+
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock>Название книги</TextBlock>
-        <TextBox x:Name="TitleBox" Grid.Row="0" Margin="150, 0, 0, 5"/>
-        
-        <TextBlock Grid.Row="1">Количество страниц</TextBlock>
-        <TextBox x:Name="PagesBox" Grid.Row="1" Margin="150, 0, 0, 5"/>
-        
-        <TextBlock Grid.Row="2">Цена</TextBlock>
-        <TextBox x:Name="PriceBox" Grid.Row="2" Margin="150, 0, 0, 5"/>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0, 10, 0, 0">
-            <Button Content="Средняя цена страницы" Click="Avg_Price_Click" Margin="5" Width="180"/>
-            <Button Content="Проверить на вводимое слово" Click="Check_Title_Click" Margin="5" Width="180"/>
-        </StackPanel>
-        <TextBlock x:Name="ResultBlock" Grid.Row="4" Text="Результаты находятся тута" Margin="0, 10, 0, 0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Text="Название книги:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="TitleBox" Grid.Row="0" Grid.Column="1" Width="200"/>
+        
+        <TextBlock Text="Количество страниц:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="PagesBox" Grid.Row="1" Grid.Column="1" Width="200"
+         PreviewTextInput="NumberOnly_PreviewTextInput"
+         PreviewKeyDown="NoSpace_PreviewKeyDown"/>
+        <TextBlock Text="Цена книги:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="PriceBox" Grid.Row="2" Grid.Column="1" Width="200"
+         PreviewTextInput="NumberOrDot_PreviewTextInput"
+         PreviewKeyDown="NoSpace_PreviewKeyDown"/>
+        
+
+        <TextBlock Text="Проверочное слово:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="CheckWordBox" Grid.Row="3" Grid.Column="1" Width="200"/>
+
+        <Grid Grid.Row="4" Grid.ColumnSpan="2" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Средняя цена страницы" Grid.Column="0" Margin="5"
+                    Click="Avg_Price_Click"/>
+            <Button Content="Проверить название" Grid.Column="1" Margin="5"
+                    Click="Check_Title_Click"/>
+        </Grid>
+
+        <TextBlock x:Name="ResultBlock" Grid.Row="5" Grid.ColumnSpan="2"
+                   Text="Результат будет здесь"
+                   Foreground="DarkBlue" Margin="0,10,0,0"/>
     </Grid>
 </Window>
