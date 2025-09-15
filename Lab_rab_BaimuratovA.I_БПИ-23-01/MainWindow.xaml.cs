@@ -25,6 +25,10 @@ namespace Lab_rab_BaimuratovA.I_БПИ_23_01
             InitializeComponent();
 
         }
+        private void NumberPrevent(object
+        {
+            if 
+        }
     }
     
 }

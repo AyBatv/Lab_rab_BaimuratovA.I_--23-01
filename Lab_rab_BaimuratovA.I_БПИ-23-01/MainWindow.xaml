@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab_rab_BaimuratovA.I_БПИ_23_01"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Книга" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock>Название книги</TextBlock>
+        <TextBox x:Name="TitleBox" Grid.Row="0" Margin="150, 0, 0, 5"/>
         
+        <TextBlock Grid.Row="1">Количество страниц</TextBlock>
+        <TextBox x:Name="PagesBox" Grid.Row="1" Margin="150, 0, 0, 5"/>
+        
+        <TextBlock Grid.Row="2">Цена</TextBlock>
+        <TextBox x:Name="PriceBox" Grid.Row="2" Margin="150, 0, 0, 5"/>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0, 10, 0, 0">
+            <Button Content="Средняя цена страницы" Click="Avg_Price_Click" Margin="5" Width="180"/>
+            <Button Content="Проверить на вводимое слово" Click="Check_Title_Click" Margin="5" Width="180"/>
+        </StackPanel>
+        <TextBlock x:Name="ResultBlock" Grid.Row="4" Text="Результаты находятся тута" Margin="0, 10, 0, 0"/>
+
     </Grid>
 </Window>
